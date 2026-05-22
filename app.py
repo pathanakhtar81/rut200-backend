@@ -87,5 +87,7 @@ def live():
     return jsonify(latest_data)
 
 
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8090, debug=False)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
